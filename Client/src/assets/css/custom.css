@@ -1,0 +1,74 @@
+.routeTitle {
+  padding: 30px 0;
+  color: #636363;
+}
+@media (min-width: 1025px) {
+  .movileTitle {
+    display: none;
+  }
+}
+
+
+
+.itemProductInput {
+  margin-right: 15px;
+}
+@media (min-width: 992px) {
+  @media (max-width: 1211px) {
+    .itemProductBtn {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .itemProductInput {
+      margin-left: 17px;
+      margin-right: 0;
+    }
+  }
+}
+
+.mainColor {
+  color: #15B0CE !important;
+}
+.mainBGColor {
+  background-color: #15B0CE !important;
+}
+.secondaryColor {
+  color: #22223E !important;
+}
+.secondaryBGColor {
+  background-color: #22223E !important;
+}
+
+
+
+.sidebarBackground {
+  position: fixed;
+  background: rgba(0,0,0,.2);
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  bottom: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  opacity: 1;
+}
+
+
+
+/* BORRA EL FOOTER */
+@media (max-width: 790px) {
+  .tt-footer-default {
+    background: #15B0CE;
+  }
+  .tt-footer-custom,
+  .tt-footer-col {
+    display: none !important;
+  }
+  .content-area__content {
+    margin-bottom: 50px;
+  }
+  .footerTopText {
+    padding: 15px 0;
+  }
+}

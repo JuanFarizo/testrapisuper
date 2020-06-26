@@ -1,0 +1,51 @@
+.btnIcon {
+  vertical-align: middle !important;
+  display: inline-block !important;
+}
+.nowrap{
+  white-space: nowrap;
+}
+.autoWidth {
+  width: 1px;
+}
+.stockOfStockAlert {
+  font-weight: bold;
+  font-size: 14px;
+}
+.isNewLabelBlock,
+.isNewLabel {
+background-color: ORANGE;
+  border-radius: 2px 10px 10px 2px;
+  color: white;
+  font-weight: 600;
+  padding: 2px 10px;
+  font-size: 11px;
+}
+.isNewLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.isNewLabelBlock {
+  display: inline-block;
+  margin-left: 15px;
+  border-radius: 50px;
+}
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.pos-relative {
+  position: relative !important;
+}
+
+
+.v-selectLabel {
+  position: relative;
+  top: -58px;
+  left: 5px;
+  font-size: 12px;
+}

@@ -1,0 +1,21 @@
+# Don't track content of these folders
+admin/yarn.lock
+admin/packege.json
+
+dist/
+BACKUP/
+_noWeb/documentation
+_noWeb/examples
+_noWeb/images
+_noWeb/special
+_noWeb/templates
+
+node_modules/
+
+Client/node_modules/.cache/
+admin/node_modules/.cache/
+Client/node_modules/
+admin/node_modules/
+Client/dist/
+Client/dist/index.html
+admin/dist/

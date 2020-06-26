@@ -1,0 +1,12 @@
+• Remplazar:
+  ○ En el archivo "node_modules/eslint/lib/config.js"
+    En la linea 284:
+    BORRO  const directory = filePath ? path.dirname(filePath) : this.options.cwd;
+    AGREGO const directory = this.options.cwd;
+  ○ En el archivo "node_modules/postcss-load-config/src/index.js"
+    En la linea 85:
+      BORRO  path = path ? resolve(path) : process.cwd()
+      AGREGO path = process.cwd();
+    En la linea 107:
+      BORRO  path = path ? resolve(path) : process.cwd()
+      AGREGO const directory = this.options.cwd;

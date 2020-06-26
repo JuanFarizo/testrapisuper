@@ -1,0 +1,10 @@
+"<br />
+<b>Fatal error</b>:  Uncaught ErrorException: mysqli_connect(): (HY000/1226): User 'u904264878_rsus' has exceeded the 'max_user_connections' resource (current value: 15) in /home/u904264878/domains/rapisuper.com.ar/public_html/php/_config.php:144
+Stack trace:
+#0 [internal function]: exceptionErrorHandler(2, 'mysqli_connect(...', '/home/u90426487...', 144, Array)
+#1 /home/u904264878/domains/rapisuper.com.ar/public_html/php/_config.php(144): mysqli_connect('mysql.hostinger...', 'u904264878_rsus', 'Y1#Fffgx')
+#2 /home/u904264878/domains/rapisuper.com.ar/public_html/php/_config.php(68): conectarDB()
+#3 /home/u904264878/domains/rapisuper.com.ar/public_html/php/Stock.php(74): executeQuery(Array)
+#4 {main}
+  thrown in <b>/home/u904264878/domains/rapisuper.com.ar/public_html/php/_config.php</b> on line <b>144</b><br />
+"

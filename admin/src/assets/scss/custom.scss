@@ -1,0 +1,85 @@
+// MAIN
+td {
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+td.centered span {
+  justify-content: center;
+}
+// No funciona
+th.centered div.vs-table-text {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+
+.fix-SidebarBottom {
+  height: 30px;
+}
+
+.saleState0 { background-color: #DDDDDD; color: #000000; border-color: #000000; }
+.saleState1 { background-color: #7FDBFF; color: #004966; border-color: #004966; }
+.saleState2, .saleState3 { background-color: #FFDC00; color: #665800; border-color: #665800; }
+.saleState4, .saleState5 { background-color: #FF851B; color: #663000; border-color: #663000; }
+.saleState6 { background-color: #01FF70; color: #00662C; border-color: #00662C; }
+.saleState7 { background-color: #2ECC40; color: #0E3E14; border-color: #0E3E14; }
+.saleState8, .saleState9 { background-color: #FF4136; color: #800600; border-color: #800600; }
+
+.helpText {
+  opacity: 0.7;
+  text-align: center;
+  font-style: italic;
+}
+
+.labelVselect {
+  font-size: .85rem;
+  padding-left: 5px;
+  color: rgba(0,0,0,.7);
+  display: block;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.vSelect /deep/ div {
+  height: 41px;
+}
+
+
+
+.tableHeaderContainer {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  @media (max-width: 500px) {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  // width: 100%;
+}
+
+.tableHeaderItem {
+  display: inline-flex;
+  margin-left: 5px;
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+}
+
+.tableHeaderItem,
+.tableSecondHeaderItem {
+  margin-top:    5px;
+  margin-bottom: 5px;
+  @media (max-width: 650px) {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+}

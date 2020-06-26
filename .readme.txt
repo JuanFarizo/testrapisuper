@@ -1,0 +1,26 @@
+REQUISITOS PREVIOS:
+  • Tener instalado XAMPP (https://www.apachefriends.org/es/index.html)
+  • Tener instalado NPM o YARN (https://classic.yarnpkg.com/en/docs/install/#windows-stable)
+  • Tener instalado Vue CLI (Ejecutar en la consola "yarn global add @vue/cli")
+
+INSTALACIÓN
+• Clonar el repositorio de bitbucket en la siguiente dirección: C:\xampp\htdocs\Rapisuper
+• Abrir la consola de comandos de windows (buscar cmd en el buscador de windows)
+• En la consola pocicionarse en la carpeta del admin (cd C:\xampp\htdocs\Rapisuper\admin)
+• En la consola ejecutar "yarn install" (sin comillas)
+• En la consola pocicionarse en la carpeta del Client (cd C:\xampp\htdocs\Rapisuper\Client)
+• En la consola ejecutar "yarn install" (sin comillas)
+• Solucionar el problema de node_server para el client, y para el admin (se explica en el archivo /.readme-solve_node_server.txt)
+
+INSTALAR BASE DE DATOS
+• Abrir XAMPP y correr mysql
+• Ingrear a http://localhost/phpmyadmin
+• Crear una base de datos con el nombre rapisuper y el cotejamiento utf8_general_ci
+• Importar en la base de datos el último archivo de la carpeta /_noWeb/DB/
+
+CORRER EL SERVER
+• Abrir XAMPP y correr apache, mysql, filezilla
+• en la consola cd C:\xampp\htdocs\Rapisuper\admin o C:\xampp\htdocs\Rapisuper\Client
+según lo que se quiera acceder
+• ejectutar en la consola el comando yarn run serve
+• Abrir el navegador y entrar a https://localhost:8080 para el admin o http://localhost:8080 (sin s) para el Client

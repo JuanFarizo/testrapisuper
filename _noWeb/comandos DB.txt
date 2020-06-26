@@ -1,0 +1,147 @@
+PRODUCTOS DE COMPRA
+SELECT sales_u_products.id,
+sales_u_products.amount,
+products.fullName FROM `sales_u_products`
+INNER JOIN products ON products.id = sales_u_products.productID
+WHERE saleID = 70
+
+SELECT `sales_u_products`.*, products.fullName FROM `sales_u_products` INNER JOIN products ON products.id = sales_u_products.productID WHERE saleID = 74
+
+
+
+INFO COMPRA
+SELECT
+s.date AS Fecha,
+s.totalTotal AS Total,
+s.receptionTime AS Hora,
+pay.paymentType AS TipoPago,
+s.paymentPrediction AS PrediccionPago,
+ad.streetName AS Calle,
+ad.streetNumber AS Num,
+cities.city AS Ciudad,
+ad.floorAndDepartment AS Depto,
+ad.extraReferences AS ReferenciasExtra,
+re.name AS Nombre,
+re.surname AS Apellido
+
+FROM `sales` AS s
+INNER JOIN buyers_addresses AS ad ON ad.id = s.addressID
+INNER JOIN cities ON cities.id = ad.cityID
+INNER JOIN buyers_personal_info AS re ON re.id = s.receiverID
+INNER JOIN sales_payment_types AS pay ON pay.id = s.paymentTypeID
+
+WHERE s.id = 86
+
+2020-01-18 10:17:32
+
+
+
+- - - TRAE PRODUCTOS CON PRECIO PERO SIN STOCK - - -
+  SELECT
+    products.id AS ID,
+    products.fullName AS Nombre,
+    products_details.price AS Precio,
+    products.stock AS Stock
+  FROM `products
+  INNER JOIN products_details ON products_details.id = products.detailsID
+  WHERE products.stock = 0 AND products_details.price != 0
+  ORDER BY Nombre
+
+- - - -- - - - --- - ESPECIALES - - -- - - -- - - -- --
+
+ACTUALIZAR FECHA RECIBIDA
+  PARTE 1 (shippingNeeded)
+    UPDATE sales SET shippingNeeded = 1
+    WHERE receptionTimeOLD != "Retiro en local" AND receptionTimeOLD != ""
+
+  PARTE 2 (receptionTimeRange)
+    UPDATE sales SET receptionTimeRange = 30
+    WHERE shippingNeeded = 1
+
+  PARTE 3 (receptionDate)
+    UPDATE sales SET receptionDate = SUBSTRING(date, 1, 10)
+    WHERE receptionDate = "0000-00-00"
+
+  PARTE 4 (receptionDate correction)
+    Corregir a mano los receptionDate que hayan sido para "mañana"
+
+  PARTE 5 (receptionTime)
+    Cambiar a mano los receptionTime
+  PARTE 6
+    Checkear que los horarios de las fechas hayan estado bien guardados
+
+
+
+
+
+VER VENTAS DE PANADERÍA SECILIA
+SELECT
+  changes.amount
+  ,products.fullName
+FROM products_stock_changes AS changes
+INNER JOIN products ON products.id = changes.productID
+WHERE
+instr(products.fullName, "Santa Cecilia")
+AND changes.amount < 0
+
+
+
+
+COPIAR PRODUCTOS DE TABLA PRODUCTS A PRODUCTS_BRANDS
+INSERT INTO products_u_branches (
+   productID
+  ,branchID
+  ,isAvaible
+  ,price
+  ,offert
+  ,stock
+  ,stockAlert
+  ,hasInfiniteStock
+  ,pickUpPlaceID
+  ,pickUpPlaceHasStock
+  ,variantPrice
+  ,variantOffert
+  ,datetimeCreated
+  ,datetimeLastUpdate
+  ,isActive
+)
+SELECT
+ products.id -- productID
+,1 -- branchID
+,1 -- isAvaible
+,products_details.price -- price
+,0 -- offert
+,products.stock -- stock
+,products.stockAlert -- stockAlert
+,products.hasInfiniteStock -- hasInfiniteStock
+,products.pickUpPlaceID -- pickUpPlaceID
+,products.pickUpPlaceHasStock -- pickUpPlaceHasStock
+,0 -- variantPrice
+,0 -- variantOffert
+,products.dateCreated -- datetimeCreated
+,products.dateCreated AS dateCreated2 -- datetimeLastUpdate
+,1 -- isActive
+FROM products
+INNER JOIN products_details ON products_details.id = products.detailsID
+WHERE isActive = 1 AND isArchived = 0 AND creatorEmployeeID = 2
+
+
+DROP TODO
+SELECT concat('DROP TABLE IF EXISTS `', table_name, '`;')
+FROM information_schema.tables
+WHERE table_schema = 'MyDatabaseName';
+
+
+CUÁNTOS DESCUENTOS SE USARON EN UNA FECHA
+SELECT
+SUM(appliedDiscount)
+FROM sales
+WHERE
+appliedDiscount != 0
+AND receptionDate = '2020-06-17'
+
+
+FIJARSE CUANTOS COMPRARON CON UN DESCUENTO EN PARTICULAR
+SELECT * FROM `sales`
+INNER JOIN sales_discounts_codes AS codes ON codes.id = sales.discountCodeID
+WHERE codes.discountID = 4

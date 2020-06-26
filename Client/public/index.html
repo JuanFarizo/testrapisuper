@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" type="text/css" href="<%= BASE_URL %>loader.css">
+    <title>Rapisuper</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRK27KYP7D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QRK27KYP7D');
+    </script>
+
+
+  </head>
+  <body>
+    <noscript>
+      <strong>
+        Lo sentimos, Rapisuper no funciona sin javascript. Por favor, habilitalo para continuar.
+      </strong>
+    </noscript>
+    <div id="loading-bg">
+      <div class="loading-logo">
+        <img src="<%= BASE_URL %>logo.png" alt="Logo">
+      </div>
+      <div class="loading">
+        <div class="effect-1 effects"></div>
+        <div class="effect-2 effects"></div>
+        <div class="effect-3 effects"></div>
+      </div>
+    </div>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
